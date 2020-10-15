@@ -24,5 +24,10 @@ db.proprietaire = require("./proprietaire.model.js")(sequelize, Sequelize);
 db.commentaire = require("./commentaire.model.js")(sequelize, Sequelize);
 db.evenement = require("./evenement.model.js")(sequelize, Sequelize);
 db.utilisateur = require("./utilisateur.model.js")(sequelize, Sequelize);
+db.utilisateur.hasMany(db.commentaire, { as: "commentaires" });
+db.commentaire.belongsTo(db.utilisateur, {
+  foreignKey: "utilisateurId",
+  as: "utilisateurs",
+});
 
 module.exports = db;
