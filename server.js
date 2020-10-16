@@ -27,11 +27,12 @@ app.get("/", (req, res) => {
 
 
 require("./app/routes/bar.routes")(app);
-require("./app/routes/utilisateur.routes")(app);
-require("./app/routes/commentaire.routes")(app);
+// require("./app/routes/utilisateur.routes")(app);
+// require("./app/routes/commentaire.routes")(app);
 require("./app/routes/evenement.routes")(app);
 require("./app/routes/proprietaire.routes")(app);
 require("./app/routes/test.routes")(app);
+require('./app/routes/auth.routes')(app);
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

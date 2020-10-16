@@ -1,11 +1,12 @@
 module.exports = app => {
   const test = require("../controllers/test.controller.js");
+  
 
   var router = require("express").Router();
 
   // Create a new Tutorial
-  router.post("/utilisateur", test.createUtilisateur);
-  router.post("/commentaire", test.createCommentaire);
+  // router.post("/utilisateur", test.createUtilisateur);
+  // router.post("/commentaire", test.createCommentaire);
 
   // Retrieve all Tutorials
   router.get("/", test.findAll);
@@ -15,7 +16,7 @@ module.exports = app => {
   router.get("/commentaire/:id", test.findCommentaireById);
 
   // Update a Tutorial with id
-  // router.put("/:id", test.update);
+  router.put("/utilisateur/:id", test.updateUtilisateur);
 
   // Delete a Tutorial with id
   // router.delete("/:id", test.delete);
